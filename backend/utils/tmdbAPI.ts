@@ -1,10 +1,9 @@
 import axios from 'axios';
-import {config as configDotenv} from 'dotenv'
+import config from '../config.js'
 
-configDotenv()
-const API_KEY = process.env.tmdbAPIKey;
+
+const API_KEY = config.tmdbAPIKey;
 const BASE_URL = 'https://api.themoviedb.org/3';
-console.log(API_KEY)
 
 export async function getMovieById(movieId: number) {
   try {
@@ -13,7 +12,8 @@ export async function getMovieById(movieId: number) {
         Authorization: `Bearer ${API_KEY}`,
       },
       params: {
-        append_to_response: 'credits,release_dates,external_ids'
+        append_to_response: 'credits,release_dates,external_ids',
+        include_adult: true,
       }
     });
     return response.data;
@@ -31,7 +31,7 @@ export async function searchMovieByTitle(title: string) {
       },
       params: {
         query: title,
-        include_adult: false,
+        include_adult: true,
       }
     });
     return response.data.results;
