@@ -37,7 +37,7 @@ const movieSchema = new Schema<IMovie>({
   premiered: { type: Date },
   genres: [{ type: Schema.Types.ObjectId, ref: 'Genre' }],
   studio: { type: String },
-  directors: [{ type: String }],
+  directors: [{ type: Schema.Types.ObjectId, ref: 'Director'}],
   actors: [
     {
       actorId: { type: Schema.Types.ObjectId, ref: 'Actor' },
