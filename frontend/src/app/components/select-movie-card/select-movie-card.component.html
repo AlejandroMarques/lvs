@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="wrapper">
+    <img class="poster" [src]="'https://image.tmdb.org/t/p/original/' + movie.poster_path" alt="">
+    <div class="details">
+      <div class="wrapper">
+        <h1 class="title">{{movie.title}} ({{movie.original_title}})</h1>
+        <h2 class="release-date">{{ movie.release_date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</h2>
+      </div>
+      <p class="overview">{{movie.overview}}</p>
+      <button (click)="onSelect()">Enviar</button>
+    </div>
+  </div>
+</div>
+   

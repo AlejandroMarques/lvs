@@ -1,1 +1,9 @@
-<form action=""></form>
+<form>
+  <input type="text" #movieTitle/>
+  <input type="submit" (click)="onSubmit($event, movieTitle.value)">
+</form>
+<div class="results">
+  @for (movie of movies; track $index) {
+    <app-select-movie-card [movie]="movie" (selectMovie)="onSelect(movie.id)"></app-select-movie-card>
+  }
+</div>

@@ -4,7 +4,7 @@ import { UploadMovieComponent } from './components/upload-movie/upload-movie.com
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,UploadMovieComponent],
+  imports: [RouterOutlet, UploadMovieComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
