@@ -13,7 +13,7 @@ export async function getMovieById(movieId: number) {
       },
       params: {
         append_to_response: 'credits,release_dates,external_ids',
-        include_adult: true,
+        language: config.LANGUAGE
       }
     });
     return response.data;
@@ -31,7 +31,7 @@ export async function searchMovieByTitle(title: string) {
       },
       params: {
         query: title,
-        include_adult: true,
+        language: config.LANGUAGE
       }
     });
     return response.data.results;
