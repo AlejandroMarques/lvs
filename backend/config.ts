@@ -9,7 +9,8 @@ interface Config {
   mongoURL: string,
   tmdbAPIKey: string
   PORT: number,
-  HOSTNAME: string
+  HOSTNAME: string,
+  LANGUAGE: string
 }
 
 const config:Config = {
@@ -18,7 +19,8 @@ const config:Config = {
     mongoURL: process.env.mongoURL || 'mongodb://localhost:27017',
     tmdbAPIKey: process.env.tmdbAPIKey || "YOUR_API_KEY",
     PORT: parseInt(process.env.port) || 3000,
-    HOSTNAME: process.env.hostname || 'http://0.0.0.0'
+    HOSTNAME: process.env.hostname || 'http://0.0.0.0',
+    LANGUAGE: process.env.LANGUAGE || 'en-EN'
 };
 
 export default config;
