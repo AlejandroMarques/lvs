@@ -1,2 +1,2 @@
 # lvs
-Service to use your local movies and series
+Service to use your local movies and series from NAS
