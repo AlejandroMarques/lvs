@@ -16,6 +16,7 @@ interface IMovie extends Document {
   directors: string[];
   actors: { actorId: string; role: string; thumb: string }[];
   tags: string[];
+  video_path: string;
 }
 
 const movieSchema = new Schema<IMovie>({
@@ -45,7 +46,8 @@ const movieSchema = new Schema<IMovie>({
       thumb: { type: String }
     }
   ],
-  tags: [{ type: String }]
+  tags: [{ type: String }],
+  video_path: { type: String },
 });
 
 export default model<IMovie>('Movie', movieSchema);
