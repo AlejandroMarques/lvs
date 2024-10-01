@@ -110,8 +110,9 @@ export default class MovieController {
 
   // Revisa tu API de Node.js y asegúrate de que esté sirviendo el contenido de manera adecuada.
   public play = async (req: Request, res: Response): Promise<void> => {
-    const videoPath =
-      "\\\\100.71.162.61\\Plex\\Library\\Películas\\Ahora Me Ves\\Ahora Me Ves (2013).mp4";
+    const {id} = req.params
+    const movie = await Movie.findById(id)
+    const videoPath = movie.video_path
     const stat = fs.statSync(videoPath);
     const fileSize = stat.size;
     const range = req.headers.range;
