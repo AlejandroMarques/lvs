@@ -14,4 +14,5 @@ export type Movie = {
   vote_average: number;
   vote_count: number;
   video_path: string;
+  _id?:string;
 }

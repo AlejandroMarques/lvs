@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Movie } from '../../models/movie.model';
-import { DatePipe } from '@angular/common';
+import { MovieCardComponent } from "../movie-card/movie-card.component";
 
 @Component({
   selector: 'app-select-movie-card',
   standalone: true,
-  imports: [DatePipe],
+  imports: [MovieCardComponent],
   templateUrl: './select-movie-card.component.html',
   styleUrl: './select-movie-card.component.css'
 })

@@ -6,13 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-
+  apiUrl: string = 'http://localhost:3003/api'
   constructor(private http: HttpClient) { }
   searchMovies(title: string): Observable<any> {
-    return this.http.get(`http://localhost:3003/api/movie/search/${title}`);
+    return this.http.get(`${this.apiUrl}/movie/search/${title}`);
   }
 
   getMovie(id: number): Observable<any> {
-    return this.http.get(`http://localhost:3003/api/movie/${id}`);
+    return this.http.get(`${this.apiUrl}/movie/${id}`);
+  }
+
+  listMovies(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/movie/list`);
   }
 }
