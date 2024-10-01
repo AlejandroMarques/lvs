@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 import GenreController from "./genreController.js";
 import ActorController from "./actorController.js";
 import DirectorController from "./directorController.js";
-import { Types } from "mongoose";
 import * as fs from "fs";
 
 export default class MovieController {
@@ -143,4 +142,9 @@ export default class MovieController {
       fs.createReadStream(videoPath).pipe(res);
     }
   };
+
+  public list = async (req: Request, res: Response): Promise<void> => {
+    const movies = await Movie.find({});
+    res.status(200).json(movies);
+  }
 }

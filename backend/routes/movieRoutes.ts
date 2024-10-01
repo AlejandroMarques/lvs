@@ -11,6 +11,7 @@ export class MovieRoutes {
   private routes(): void {
     const controller = new MovieController();
     this.router.get("/movie/search/:title", controller.search);
+    this.router.get("/movie/list", controller.list);
     this.router.get("/movie/:id", controller.save);
     this.router.get("/movie/play/:id", controller.play);
   }
