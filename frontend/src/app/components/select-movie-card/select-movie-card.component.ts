@@ -24,7 +24,8 @@ export class SelectMovieCardComponent {
     title: '',
     video: false,
     vote_average: 0,
-    vote_count: 0
+    vote_count: 0,
+    video_path: ''
   };
 
   @Output() selectMovie = new EventEmitter<number>();
